@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans:wght@300&display=swap");
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
+
+#cards {
+  font-family: "Lora", serif;
+  font-weight: normal;
+}
+
+#article {
+  font-family: "Lora", serif;
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=test.css.map */
