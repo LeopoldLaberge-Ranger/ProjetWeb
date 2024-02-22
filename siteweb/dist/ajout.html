@@ -11,12 +11,16 @@
         <link rel="stylesheet" href="/ajout.ab0485ab.css">
 
         <!--JS Scripts-->
-        <script src="/ajout.bb9d3ade.js"></script>
-        <script src="/ajout.59a40e7a.js" defer=""></script>
+        <script src="/ajout.75a63213.js"></script><script src="/ajout.affeb9c9.js" defer=""></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
         <!--SASS-->
         <link rel="stylesheet" href="/ajout.58a7e6fb.css">
+
+        <!--JQueryUI-->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     </head>
 
     <header class="blog-header py-3">
@@ -95,42 +99,69 @@
       </header>
 
 <body class=" bg-light">
-<div class="container">
-    <header class="blog-header py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-4 pt-5">
+
+  <div class="container">
+      <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-5">
+          </div>
+      </div>
+      </header>
+  </div>
+
+  
+ <div class="d-flex flex-row">
+    <div class="container d-flex flex-column align-items-center p-4 p-md-5 mb-4 text-white rounded bg-secondary shadow-lg ms-5 me-5">
+      <h2 class="mt-5">Ajouter une publication</h2>
+      <div class="row" id="form">
+          <div class="form-group border-bottom border-5 border-info">
+              <label for="titre">Titre :</label>
+              <input type="text" class="form-control" id="titre" name="titre" required="">
+          </div>
+          <div class="form-group border-bottom border-5 border-info">
+              <label for="auteur">Auteur :</label>
+              <input type="text" class="form-control" id="auteur" name="auteur" required="">
+          </div>
+          <div class="form-group border-bottom border-5 border-info">
+              <label for="auteur">Date :</label>
+              <input type="date" class="form-control" id="date" name="date">
+          </div>
+          <div class="form-group border-bottom border-5 border-info">
+            <label for="img">Image Link :</label>
+            <input type="text" class="form-control" id="img" name="img" required="">
+        </div>
+          <div class="form-group border-bottom border-5 border-info">
+              <label for="contenu">Contenu :</label>
+              <textarea class="form-control" id="contenu" name="contenu" rows="4" required=""></textarea>
+          </div>
+          <!-- Hidden fields for identifier and date -->
+          <input type="hidden" id="identifiant" name="identifiant" value="<?php echo uniqid(); ?>">
+          <input type="hidden" id="date" name="date" value="<?php echo date('Y-m-d H:i:s'); ?>">
+          
+          <button type="submit" class="btn btn-primary" id="btnAdd">Ajouter la publication</button>
         </div>
     </div>
-    </header>
-</div>
+    
+    <body>
+     
+    <div id="dialog-confirm" title="Ajouter la publication?">
+      <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 12px 12px 20px 0"></span>Etes-vous certain de vouloir ajouter cette publication?</p>
+    </div>
+    
 
-  <div class="container d-flex flex-column align-items-center p-4 p-md-5 mb-4 text-white rounded bg-secondary shadow-lg">
-    <h2 class="mt-5">Ajouter une publication</h2>
-    <form action="" class="row" id="form">
-        <div class="form-group border-bottom border-5 border-info">
-            <label for="titre">Titre :</label>
-            <input type="text" class="form-control" id="titre" name="titre" required="">
-        </div>
-        <div class="form-group border-bottom border-5 border-info">
-            <label for="auteur">Auteur :</label>
-            <input type="text" class="form-control" id="auteur" name="auteur" required="">
-        </div>
-        <div class="form-group border-bottom border-5 border-info">
-            <label for="contenu">Contenu :</label>
-            <textarea class="form-control" id="contenu" name="contenu" rows="4" required=""></textarea>
-        </div>
-        <!-- Hidden fields for identifier and date -->
-        <input type="hidden" id="identifiant" name="identifiant" value="<?php echo uniqid(); ?>">
-        <input type="hidden" id="date" name="date" value="<?php echo date('Y-m-d H:i:s'); ?>">
-        
-        <button type="submit" class="btn btn-primary" id="btnAdd">Ajouter la publication</button>
-    </form>
-</div>
-
-  <button id="showMoreButton">Show More</button>
-
-
-</body>
+  <div class="card-box col-lg-4 col-md-6 col-12 pt-5 d-flex flex-column align-items-center">
+    <div id="cardPreview" class="card text-white bg-secondary shadow-lg" style="width: 18rem">
+      <img class="card-img-top border-bottom border-5 border-info" width="286" height="202" src="https://t3.ftcdn.net/jpg/02/68/55/60/360_F_268556012_c1WBaKFN5rjRxR2eyV33znK4qnYeKZjm.jpg" alt="Card image cap" id="field1">
+      <div class="card-body">
+        <h5 class="card-title" id="field0">Blog Preview</h5>
+        <p class="date_p" id="field3">Date</p>
+        <p class="card-text" id="field2">This is some random text just so you can have a little bit of a template. For fun and visual representation only.</p>
+        <p class="auteur" id="field4">--Auteur</p>
+        <a href="#" class="btn btn-info" id="btn">Visiter Blog Preview</a>
+      </div>
+  </div>
+ </div>
+</body></div>
 
 <footer class="text-center bg-dark text-white">
   <!-- Grid container -->
@@ -165,5 +196,8 @@
     2022
   </div>
 </footer>
+
+</body>
+
 
 </html>

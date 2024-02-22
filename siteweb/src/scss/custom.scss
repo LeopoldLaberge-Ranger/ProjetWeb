@@ -31,8 +31,20 @@ body {
     font-weight: normal;
 }
 
-.card-box {
+.date_p, .auteur {
+    font-family: $lora;
+    font-size: small;
+    font-style: italic;
+}
+
+.card {
     transition: transform 0.3s ease; /* Smooth transition over 0.3 seconds */
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 @keyframes slideIn {
@@ -45,3 +57,4 @@ body {
       opacity: 1;
     }
   }
+

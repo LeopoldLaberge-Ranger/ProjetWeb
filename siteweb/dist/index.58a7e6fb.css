@@ -13214,8 +13214,20 @@ body {
   font-weight: normal;
 }
 
-.card-box {
+.date_p, .auteur {
+  font-family: Lora, serif;
+  font-size: small;
+  font-style: italic;
+}
+
+.card {
   transition: transform .3s;
+}
+
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
 }
 
 @keyframes slideIn {

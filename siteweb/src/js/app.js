@@ -9,25 +9,35 @@ function dynamicInsert() {  //Inserts data into cards from db.json
   
         // Populate the card elements with shuffled blog data
         blogs.forEach((blog, index) => {
-          const card = document.getElementById(`card${index}`);
-          card.querySelector('.card-title').innerHTML = blog.title;
-          card.querySelector('.card-text').innerHTML = blog.content;
-          card.querySelector('.card-img-top').setAttribute('src', blog.imgLink);
-          card.querySelector('.btn').innerHTML = "Visit " + blog.title;
+          let cardHTML =
+          `<div class="card-box col-lg-4 col-md-6 col-12 pt-5 d-flex flex-column align-items-center">
+            <div id="card${index}" class="card text-white bg-secondary shadow-lg" style="width: 18rem;">
+            <img class="card-img-top border-bottom border-5 border-info" width="286" height="202" src="${blog.imgLink}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">${blog.title}</h5>
+              <p class="date_p">${blog.pubDate}</p>
+              <p class="card-text">${blog.content}</p>
+              <p class="auteur">--${blog.auteur}</p>
+              <a href="blog.html?id=${blog.id}" class="btn btn-info">Visiter ${blog.title}</a>
+            </div>
+            </div>
+          </div>`
+          document.getElementById(`cards`).innerHTML += cardHTML;
         });
       })
       .catch(err => console.log(err));
   }
-  dynamicInsert();
+dynamicInsert();
+
 
 const cards = document.querySelectorAll(".card-box"); //Hover Animation
 
-cards.forEach(card => {
-  card.addEventListener("mouseover", function() {
-    this.style.transform = "scale(1.05)"; // Increase the size by 10%
-  });
+$(document).on('mouseenter', '.card', function() {
+  this.style.transform = "scale(1.05)"; // Increase the size by 10%
+  $(this).addClass('hover-effect');
+});
 
-  card.addEventListener("mouseout", function() {
-    this.style.transform = "scale(1)"; // Restore the original size
-  });
+$(document).on('mouseleave', '.card', function() {
+  this.style.transform = "scale(1)"; // Restore the original size
+  $(this).removeClass('hover-effect');
 });

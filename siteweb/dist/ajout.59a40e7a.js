@@ -594,7 +594,7 @@ function dynamicInsert() {
         });
     }).catch((err)=>console.log(err));
 }
-dynamicInsert();
+if (window.location.pathname !== "./src/ajout.html") dynamicInsert();
 const cards = document.querySelectorAll(".card-box"); //Hover Animation
 cards.forEach((card)=>{
     card.addEventListener("mouseover", function() {
@@ -604,6 +604,16 @@ cards.forEach((card)=>{
         this.style.transform = "scale(1)"; // Restore the original size
     });
 });
+const input0 = document.getElementById("titre");
+const input1 = document.getElementById("img");
+const input2 = document.getElementById("contenu");
+input0.addEventListener("input", updateCardText(0));
+input1.addEventListener("input", updateCardText(1));
+input2.addEventListener("input", updateCardText(2));
+function updateCardText(i) {
+    const cardText = document.getElementById("field" + i);
+    cardText.textContent = `${input1.value}`;
+}
 
 },{"bootstrap":"h36JB"}],"h36JB":[function(require,module,exports) {
 /*!
