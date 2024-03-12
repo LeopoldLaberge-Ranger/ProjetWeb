@@ -69,11 +69,8 @@ $( function() {
       }
     });
   
-    $('#btnAdd').on('click', function() {
-      if (titre.value !== '' && auteur.value !== '' && date.value !== '' && contenu.value !== '' && img.value !== '') {
-        $( "#dialog-confirm" ).dialog("open");
-      }
-    });
-  });
+    $( "#del" ).on( "click", function() {
+      console.log("Hello");
+    })
 
 

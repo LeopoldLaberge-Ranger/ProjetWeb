@@ -598,7 +598,7 @@ function dynamicInsert() {
             </div>
             </div>
           </div>`;
-            document.getElementById(`cards`).innerHTML += cardHTML;
+            $("#cards").append(cardHTML);
         });
     }).catch((err)=>console.log(err));
 }

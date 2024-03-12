@@ -22,7 +22,7 @@ function dynamicInsert() {  //Inserts data into cards from db.json
             </div>
             </div>
           </div>`
-          document.getElementById(`cards`).innerHTML += cardHTML;
+          $("#cards").append(cardHTML);
         });
       })
       .catch(err => console.log(err));
