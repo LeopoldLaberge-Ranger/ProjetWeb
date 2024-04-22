@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans:wght@300&display=swap');
+
+//Fonts
+$lora: 'Lora', serif;
+$OpenSans: 'Open Sans', sans-serif;
+
+//Bootstrap variable overrides
+$info: #00ADB5;
+$dark: #222831;
+$secondary: #393E46;
+$light: #EEEEEE;
+$navbar-dark-hover-color: $info;
+
+//Bootstrap scss import
+@import "M:/Informatique/Web3/ProjetWeb/NextJS/web-app/node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+    font-family: $OpenSans;
+    font-weight: normal;
+    height: 1000px;
+}
+
+#cards {
+    font-family: $lora;
+    font-weight: normal;
+}
+
+#article {
+    font-family: $lora;
+    font-weight: normal;
+}
+
+.date_p, .auteur {
+    font-family: $lora;
+    font-size: small;
+    font-style: italic;
+}
+
+.card {
+    transition: transform 0.3s ease; /* Smooth transition over 0.3 seconds */
+}
+
+footer {
+  position: relative;
+  padding-top: 20px;
+  bottom: 0;
+  width: 100%;
+}
+
+@keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
+
+
